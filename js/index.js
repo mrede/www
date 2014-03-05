@@ -57,14 +57,14 @@ var app = {
         } else {
             //IOS
             alert("Doing IOS");
-            /*pushNotification.register(
+            pushNotification.register(
             app.pushRegisterSuccessIosHandler,
             app.pushRegisterErrorIosHandler, {
                 "badge":"true",
                 "sound":"true",
                 "alert":"true",
                 "ecb":"app.onNotificationAPN"
-            });*/
+            });
 
         }
         alert("END");
