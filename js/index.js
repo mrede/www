@@ -44,12 +44,11 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        alert("HERE")
-        console.log('Received Event: ' + id);
-        alert('Device: ' + device);
+        window.console('Received Event: ' + id);
+
 
         var pushNotification = window.plugins.pushNotification;
-        alert("TEST"+ pushNotification)
+
         if ( device.platform == 'android' || device.platform == 'Android' )
         {
             alert("ANDROID");
@@ -68,15 +67,6 @@ var app = {
 
         }
         alert("END");
-
-        /*var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
-        deviceInfo.get(function(result) {
-            alert("result = " + result);
-        }, function() {
-            alert("error");
-         });
-*/
-
 
     },
 
