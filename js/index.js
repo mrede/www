@@ -133,6 +133,7 @@ var app = {
 
     pushRegisterSuccessIosHandler: function(result) {
         alert('IOS Callback Success! Result = '+result)
+        app.sendRegistration(result);
     },
 
     pushRegisterErrorIosHandler: function(error) {
