@@ -48,7 +48,24 @@ var app = {
         console.log('Received Event: ' + id);
         alert('Device: ' + device);
 
-        
+        var pushNotification = window.plugins.pushNotification;
+        if ( device.platform == 'android' || device.platform == 'Android' )
+        {
+            alert("ANDROID");
+            //pushNotification.register(app.pushRegisterSuccessHandler, app.pushRegisterErrorHandler,{"senderID":"351251685442","ecb":"app.onNotificationGCM"});
+        } else {
+            //IOS
+            alert("Doing IOS");
+            /*pushNotification.register(
+            app.pushRegisterSuccessIosHandler,
+            app.pushRegisterErrorIosHandler, {
+                "badge":"true",
+                "sound":"true",
+                "alert":"true",
+                "ecb":"app.onNotificationAPN"
+            });*/
+
+        }
 
         /*var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
         deviceInfo.get(function(result) {
