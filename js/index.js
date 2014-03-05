@@ -47,7 +47,21 @@ var app = {
         console.log('Received Event: ' + id);
 
         var pushNotification = window.plugins.pushNotification;
-        pushNotification.register(app.pushRegisterSuccessHandler, app.pushRegisterErrorHandler,{"senderID":"351251685442","ecb":"app.onNotificationGCM"});
+        if ( device.platform == 'android' || device.platform == 'Android' )
+        {
+            pushNotification.register(app.pushRegisterSuccessHandler, app.pushRegisterErrorHandler,{"senderID":"351251685442","ecb":"app.onNotificationGCM"});
+        } else {
+            //IOS
+            pushNotification.register(
+            app.pushRegisterSuccessIosHandler,
+            app.pushRegisterErrorIosHandler, {
+                "badge":"true",
+                "sound":"true",
+                "alert":"true",
+                "ecb":"app.onNotificationAPN"
+            });
+
+        }
 
     },
 
@@ -101,5 +115,32 @@ var app = {
 
     registerSuccessHandler: function(e) {
         console.log("REgister success");
+    },
+
+    pushRegisterSuccessIosHandler: function(result) {
+        alert('IOS Callback Success! Result = '+result)
+    },
+
+    pushRegisterErrorIosHandler: function(error) {
+        alert('IOS Callback Error! Error = '+error)
+    },
+
+    onNotificationAPN: function(event) {
+        if ( event.alert )
+        {
+            navigator.notification.alert(event.alert);
+        }
+
+        if ( event.sound )
+        {
+            var snd = new Media(event.sound);
+            snd.play();
+        }
+
+        if ( event.badge )
+        {
+            pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
+        }
     }
+
 };
