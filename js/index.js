@@ -68,14 +68,9 @@ var app = {
                 {
                     console.log("Regid " + e.regid);
                     
-                    $.ajax({
-                      type: "GET",
-                      url: 'http://192.168.0.4:3000/test/register?id='+e.regid,
-                      
-                      success: registerSuccessHandler,
-                      dataType: 'json'
-                    });
+                    
                     alert('registration id = '+e.regid);
+                    app.sendRegistration(e.regid)
                 }
             break;
  
@@ -92,6 +87,16 @@ var app = {
               alert('An unknown GCM event has occurred');
               break;
         }
+    },
+
+    sendRegistration: function(id) {
+        $.ajax({
+          type: "GET",
+          url: 'http://192.168.0.4:3000/test/register?id='+123,
+          
+          success: app.registerSuccessHandler,
+          dataType: 'json'
+        });
     },
 
     registerSuccessHandler: function(e) {
