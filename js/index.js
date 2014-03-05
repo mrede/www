@@ -49,6 +49,7 @@ var app = {
         alert('Device: ' + device);
 
         var pushNotification = window.plugins.pushNotification;
+        alert("TEST"+ pushNotification)
         if ( device.platform == 'android' || device.platform == 'Android' )
         {
             alert("ANDROID");
@@ -66,6 +67,7 @@ var app = {
             });*/
 
         }
+        alert("END");
 
         /*var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
         deviceInfo.get(function(result) {
