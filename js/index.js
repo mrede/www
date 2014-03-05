@@ -44,7 +44,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        /*console.log('Received Event: ' + id);
 
         var pushNotification = window.plugins.pushNotification;
         if ( device.platform == 'android' || device.platform == 'Android' )
@@ -52,7 +52,7 @@ var app = {
             pushNotification.register(app.pushRegisterSuccessHandler, app.pushRegisterErrorHandler,{"senderID":"351251685442","ecb":"app.onNotificationGCM"});
         } else {
             //IOS
-            Alert("Doing IOS")
+            alert("Doing IOS")
             pushNotification.register(
             app.pushRegisterSuccessIosHandler,
             app.pushRegisterErrorIosHandler, {
@@ -62,7 +62,16 @@ var app = {
                 "ecb":"app.onNotificationAPN"
             });
 
-        }
+        }*/
+
+        var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
+        deviceInfo.get(function(result) {
+            alert("result = " + result);
+        }, function() {
+            alert("error");
+         });
+
+
 
     },
 
