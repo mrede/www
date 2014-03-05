@@ -123,7 +123,7 @@ var app = {
 
         if ( event.badge )
         {
-            //pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
+            pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
         }
     }
 
