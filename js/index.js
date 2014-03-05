@@ -52,6 +52,7 @@ var app = {
             pushNotification.register(app.pushRegisterSuccessHandler, app.pushRegisterErrorHandler,{"senderID":"351251685442","ecb":"app.onNotificationGCM"});
         } else {
             //IOS
+            Alert("Doing IOS")
             pushNotification.register(
             app.pushRegisterSuccessIosHandler,
             app.pushRegisterErrorIosHandler, {
