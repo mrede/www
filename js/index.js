@@ -64,7 +64,7 @@ var app = {
 
         }*/
 
-        var deviceInfo = window.plugins.deviceInformation; //cordova.require("cordova/plugin/DeviceInformation");
+        var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
         deviceInfo.get(function(result) {
             alert("result = " + result);
         }, function() {
