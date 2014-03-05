@@ -70,7 +70,7 @@ var app = {
                     
                     $.ajax({
                       type: "GET",
-                      url: 'http://192.168.0.4:3000/test/register?id='e.regid,
+                      url: 'http://192.168.0.4:3000/test/register?id='+e.regid,
                       
                       success: registerSuccessHandler,
                       dataType: 'json'
