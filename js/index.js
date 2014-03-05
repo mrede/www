@@ -47,6 +47,84 @@ var app = {
         alert("HERE");
 
 
+    },
+
+    pushRegisterSuccessHandler: function(result) {
+        alert('Callback Success! Result = '+result)
+    },
+
+    pushRegisterErrorHandler: function(error) {
+        alert('Error = '+error)
+    },
+
+    onNotificationGCM: function(e) {
+        console.log("GCM", e);
+        switch( e.event )
+        {
+            case 'registered':
+                if ( e.regid.length > 0 )
+                {
+                    console.log("Regid " + e.regid);
+                    
+                    
+                    alert('registration id = '+e.regid);
+                    app.sendRegistration(e.regid)
+                }
+            break;
+ 
+            case 'message':
+              // this is the actual push notification. its format depends on the data model from the push server
+              alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+            break;
+ 
+            case 'error':
+              alert('GCM error = '+e.msg);
+            break;
+ 
+            default:
+              alert('An unknown GCM event has occurred');
+              break;
+        }
+    },
+
+    sendRegistration: function(id) {
+        $.ajax({
+          type: "GET",
+          url: 'http://best-tool.benede.com/register?id='+id,
+          
+          success: app.registerSuccessHandler,
+          dataType: 'json'
+        });
+    },
+
+    registerSuccessHandler: function(e) {
+        console.log("REgister success");
+    },
+
+    pushRegisterSuccessIosHandler: function(result) {
+        alert('IOS Callback Success! Result = '+result)
+    },
+
+    pushRegisterErrorIosHandler: function(error) {
+        alert('IOS Callback Error! Error = '+error)
+    },
+
+    onNotificationAPN: function(event) {
+        if ( event.alert )
+        {
+            navigator.notification.alert(event.alert);
+        }
+
+        if ( event.sound )
+        {
+            var snd = new Media(event.sound);
+            snd.play();
+        }
+
+        if ( event.badge )
+        {
+            //pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
+        }
     }
 
 };
