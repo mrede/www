@@ -44,7 +44,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        window.console('Received Event: ' + id);
+        logger.log('Received Event: ' + id);
 
 
         var pushNotification = window.plugins.pushNotification;
@@ -67,6 +67,15 @@ var app = {
 
         }
         alert("END");
+
+        /*var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
+        deviceInfo.get(function(result) {
+            alert("result = " + result);
+        }, function() {
+            alert("error");
+         });
+*/
+
 
     },
 
