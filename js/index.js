@@ -64,7 +64,7 @@ var app = {
                 "ecb":"app.onNotificationAPN"
             });
 
-        }*/
+        }
 
         /*var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
         deviceInfo.get(function(result) {
