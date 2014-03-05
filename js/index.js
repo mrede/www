@@ -44,7 +44,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        logger.log('Received Event: ' + id);
+        //logger.log('Received Event: ' + id);
 
 
         var pushNotification = window.plugins.pushNotification;
