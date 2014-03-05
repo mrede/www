@@ -67,14 +67,15 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
+                    
                     $.ajax({
-                      type: "POST",
-                      url: '192.168.0.4:3000/test/register',
-                      data: { id: e.regid },
+                      type: "GET",
+                      url: 'http://192.168.0.4:3000/test/register?id='e.regid,
+                      
                       success: registerSuccessHandler,
                       dataType: 'json'
                     });
+                    alert('registration id = '+e.regid);
                 }
             break;
  
