@@ -44,8 +44,9 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
+        alert("HERE")
         console.log('Received Event: ' + id);
-        console.log('Device: ' + device.platform);
+        alert('Device: ' + device);
 
         var pushNotification = window.plugins.pushNotification;
         if ( device.platform == 'android' || device.platform == 'Android' )
