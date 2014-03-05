@@ -53,7 +53,7 @@ var app = {
         if ( device.platform == 'android' || device.platform == 'Android' )
         {
             alert("ANDROID");
-            //pushNotification.register(app.pushRegisterSuccessHandler, app.pushRegisterErrorHandler,{"senderID":"351251685442","ecb":"app.onNotificationGCM"});
+            pushNotification.register(app.pushRegisterSuccessHandler, app.pushRegisterErrorHandler,{"senderID":"351251685442","ecb":"app.onNotificationGCM"});
         } else {
             //IOS
             alert("Doing IOS");
