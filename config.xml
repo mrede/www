@@ -52,7 +52,7 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
     <gap:plugin name="com.phonegap.plugins.pushplugin" />
-    <plugin name="DeviceInformation" value="com.vliesaputra.cordova.plugins.DeviceInformation"/>
+    <gap:plugin name="com.vliesaputra.deviceinformation"/>
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
