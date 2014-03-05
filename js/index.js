@@ -104,7 +104,7 @@ var app = {
  
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
-              alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+              //alert('message = '+e.message+' msgcnt = '+e.msgcnt);
               $('#says').text(e.message);
             break;
  
@@ -145,7 +145,7 @@ var app = {
         alert("Something on APN:"+event)
         if ( event.alert )
         {
-            $('#says').text(event.alert)
+            //$('#says').text(event.alert)
             navigator.notification.alert(event.alert);
         }
 
