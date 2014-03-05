@@ -144,6 +144,7 @@ var app = {
         alert("Something on APN:"+event)
         if ( event.alert )
         {
+            alert("Event:"+event.alert)
             navigator.notification.alert(event.alert);
         }
 
