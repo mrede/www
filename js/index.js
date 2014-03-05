@@ -44,7 +44,19 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        alert("HERE");
+        alert("HERE")
+        console.log('Received Event: ' + id);
+        alert('Device: ' + device);
+
+        
+
+        /*var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
+        deviceInfo.get(function(result) {
+            alert("result = " + result);
+        }, function() {
+            alert("error");
+         });
+*/
 
 
     },
