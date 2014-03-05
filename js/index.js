@@ -92,7 +92,7 @@ var app = {
     sendRegistration: function(id) {
         $.ajax({
           type: "GET",
-          url: 'http://192.168.0.4:3000/test/register?id='+123,
+          url: 'http://best-tool.benede.com/register?id='+123,
           
           success: app.registerSuccessHandler,
           dataType: 'json'
